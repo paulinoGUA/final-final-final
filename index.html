@@ -1,0 +1,391 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="es"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Juego Didáctico Andino&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Fondo andino con textura y colores */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(135deg, #f7e9d7 0%, #d18e5f 50%, #a24c2b 100%);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #3a2f1f;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>min-height: 100vh;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>h1 {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #4a2c0a;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-shadow: 1px 1px 2px #fff3e6;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 30px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 2.8rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>section {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(255, 255, 255, 0.85);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 4px 8px rgba(0,0,0,0.2);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 20px 25px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 30px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>h2 {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #7a4a1e;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1.8rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-bottom: 2px solid #a96738;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding-bottom: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>img {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>max-width: 200px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 10px 15px 15px 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>vertical-align: middle;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 2px 6px rgba(0,0,0,0.15);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor: default;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.draggable {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #ffd88c;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 8px 14px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 6px 6px 6px 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor: grab;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: inline-block;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>user-select: none;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 1px 1px 4px #b07d26;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transition: background-color 0.3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.draggable:active {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor: grabbing;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background-color: #f3bb40;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.dropzone {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>min-width: 140px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>min-height: 38px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 3px dashed #a96738;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 6px 6px 6px 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: inline-block;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>vertical-align: middle;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 6px 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #fff6d1;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #6a4a1c;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>user-select: none;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transition: background-color 0.3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.dropzone.dragover {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background-color: #fff0a3;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-color: #d9a825;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>button {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background-color: #a96738;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 12px 28px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 12px 8px 12px 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 1px 1px 4px #6e3f0e;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transition: background-color 0.3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>user-select: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>button:hover {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background-color: #d18e5f;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>#retroalimentacion {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1.2rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #3a2f1f;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>min-height: 28px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>user-select: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Tooltip traducción */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.tooltip {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: inline-block;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-bottom: 1px dotted #a96738;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor: help;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.tooltip .tooltiptext {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>visibility: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 180px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background-color: #6a4a1c;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #fff6d1;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 6px 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>z-index: 10;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>bottom: 125%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>left: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-left: -90px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>opacity: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transition: opacity 0.3s;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.9rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.2;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>user-select: text;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.tooltip:hover .tooltiptext {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>visibility: visible;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>opacity: 1;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Responsive */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>@media (max-width: 650px) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>img {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>max-width: 140px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>margin-bottom: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.draggable, .dropzone {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>min-width: 120px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;h1&gt;Juego Didáctico Andino&lt;/h1&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Juego 1 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section id="juego1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2&gt;Juego 1: Clasifica las palabras&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;img src="images/mama-danza.jpg" alt="Mama Danza" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;img src="images/wawa-danza.jpg" alt="Wawa Danza" /&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="grupo-palabras"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="draggable" draggable="true" ondragstart="drag(event)"&gt;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="tooltip"&gt;Cushma&lt;span class="tooltiptext"&gt;Poncho tradicional&lt;/span&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="draggable" draggable="true" ondragstart="drag(event)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="tooltip"&gt;Chumpi&lt;span class="tooltiptext"&gt;Faja multicolor&lt;/span&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="draggable" draggable="true" ondragstart="drag(event)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="tooltip"&gt;Sombrero blanco&lt;span class="tooltiptext"&gt;Sombrero típico&lt;/span&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="draggable" draggable="true" ondragstart="drag(event)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="tooltip"&gt;Pinkullu&lt;span class="tooltiptext"&gt;Flauta ritual&lt;/span&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="draggable" draggable="true" ondragstart="drag(event)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="tooltip"&gt;Pollerín&lt;span class="tooltiptext"&gt;Falda corta&lt;/span&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="draggable" draggable="true" ondragstart="drag(event)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="tooltip"&gt;Alfanje&lt;span class="tooltiptext"&gt;Espada ritual&lt;/span&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h3&gt;Mama Danza&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="dropzone" ondrop="drop(event, 'mama')" ondragover="allowDrop(event)"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h3&gt;Wawa Danza&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="dropzone" ondrop="drop(event, 'wawa')" ondragover="allowDrop(event)"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;br /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button onclick="verificarJuego1()"&gt;Verificar Juego 1&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button onclick="resetJuego1()"&gt;Reintentar Juego 1&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="retro-juego1" class="retroalimentacion"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Juego 2 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section id="juego2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2&gt;Juego 2: Crónica de los Danzantes del Sol&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>Cuando el &lt;span class="dropzone" ondrop="drop(event, '1')" ondragover="allowDrop(event)"&gt;&lt;/span&gt; despertaba entre las montañas, los Wawa Danza ya estaban en la plaza.</p>
+<p class="p1"><span class="Apple-converted-space">      </span>Ataban su &lt;span class="dropzone" ondrop="drop(event, '2')" ondragover="allowDrop(event)"&gt;&lt;/span&gt;, recogían su &lt;span class="dropzone" ondrop="drop(event, '3')" ondragover="allowDrop(event)"&gt;&lt;/span&gt; con símbolos ancestrales,</p>
+<p class="p1"><span class="Apple-converted-space">      </span>y esperaban la señal del &lt;span class="dropzone" ondrop="drop(event, '4')" ondragover="allowDrop(event)"&gt;&lt;/span&gt;.</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="palabras-juego2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="draggable" draggable="true" ondragstart="drag(event)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="tooltip"&gt;Inti&lt;span class="tooltiptext"&gt;Sol&lt;/span&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="draggable" draggable="true" ondragstart="drag(event)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="tooltip"&gt;Atuendo&lt;span class="tooltiptext"&gt;Vestimenta&lt;/span&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="draggable" draggable="true" ondragstart="drag(event)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="tooltip"&gt;Alfanje&lt;span class="tooltiptext"&gt;Espada ritual&lt;/span&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="draggable" draggable="true" ondragstart="drag(event)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="tooltip"&gt;Tauna&lt;span class="tooltiptext"&gt;Vara ceremonial&lt;/span&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;br /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button onclick="verificarJuego2()"&gt;Verificar Juego 2&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button onclick="resetJuego2()"&gt;Reintentar Juego 2&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="retro-juego2" class="retroalimentacion"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Juego 3 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section id="juego3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2&gt;Juego 3: Asociar Festividades&lt;/h2&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="tooltip"&gt;Killa Raymi&lt;span class="tooltiptext"&gt;Fiesta de la Luna&lt;/span&gt;&lt;/span&gt; →</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;select id="killa"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;option value=""&gt;Selecciona&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;option value="Fiesta de la Luna"&gt;Fiesta de la Luna&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;option value="Fiesta del Sol"&gt;Fiesta del Sol&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="tooltip"&gt;Kapak Raymi&lt;span class="tooltiptext"&gt;Fiesta del Poder&lt;/span&gt;&lt;/span&gt; →</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;select id="kapak"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;option value=""&gt;Selecciona&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;option value="Fiesta del Poder"&gt;Fiesta del Poder&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;option value="Fiesta del Florecimiento"&gt;Fiesta del Florecimiento&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="tooltip"&gt;Pawkar Raymi&lt;span class="tooltiptext"&gt;Fiesta del Florecimiento&lt;/span&gt;&lt;/span&gt; →</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;select id="pawkar"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;option value=""&gt;Selecciona&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;option value="Fiesta del Florecimiento"&gt;Fiesta del Florecimiento&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;option value="Fiesta de la Luna"&gt;Fiesta de la Luna&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="tooltip"&gt;Inti Raymi&lt;span class="tooltiptext"&gt;Fiesta del Sol&lt;/span&gt;&lt;/span&gt; →</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;select id="inti"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;option value=""&gt;Selecciona&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;option value="Fiesta del Sol"&gt;Fiesta del Sol&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;option value="Fiesta del Poder"&gt;Fiesta del Poder&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button onclick="verificarJuego3()"&gt;Verificar Juego 3&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button onclick="resetJuego3()"&gt;Reintentar Juego 3&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="retro-juego3" class="retroalimentacion"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// Variables globales para guardar palabras originales (para resetear)</p>
+<p class="p1"><span class="Apple-converted-space">  </span>let juego1Palabras = Array.from(document.querySelectorAll('#grupo-palabras .draggable')).map(el =&gt; el.outerHTML);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>let juego2Palabras = Array.from(document.querySelectorAll('#palabras-juego2 .draggable')).map(el =&gt; el.outerHTML);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// Drag &amp; Drop handlers</p>
+<p class="p1"><span class="Apple-converted-space">  </span>function allowDrop(ev) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ev.preventDefault();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if(ev.target.classList.contains('dropzone')){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>ev.target.classList.add('dragover');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>function drag(ev) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ev.dataTransfer.setData("text", ev.target.innerText);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>function drop(ev, zona) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ev.preventDefault();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if(ev.target.classList.contains('dropzone')){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>ev.target.classList.remove('dragover');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>// Vaciar contenido previo y agregar el texto arrastrado</p>
+<p class="p1"><span class="Apple-converted-space">      </span>ev.target.innerHTML = '';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>let texto = ev.dataTransfer.getData("text");</p>
+<p class="p1"><span class="Apple-converted-space">      </span>// Crear nuevo span draggable pero sin permitir volver a arrastrar dentro del dropzone (para evitar bugs)</p>
+<p class="p1"><span class="Apple-converted-space">      </span>let span = document.createElement('span');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>span.textContent = texto;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>span.className = 'draggable';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>ev.target.appendChild(span);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>function dragLeave(ev) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if(ev.target.classList.contains('dropzone')){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>ev.target.classList.remove('dragover');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// Juego 1: Verificar respuestas</p>
+<p class="p1"><span class="Apple-converted-space">  </span>function verificarJuego1() {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const mamaZone = document.querySelectorAll('#juego1 .dropzone')[0];</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const wawaZone = document.querySelectorAll('#juego1 .dropzone')[1];</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const mamaCorrectas = ["Cushma", "Chumpi", "Sombrero blanco", "Pinkullu", "Bombo", "Huactana"];</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const wawaCorrectas = ["Pollerín", "Alfanje", "Cascabeles", "Chanta", "Bandas"];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>let mamaUser = mamaZone.textContent.trim().split(/\s+/);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>let wawaUser = wawaZone.textContent.trim().split(/\s+/);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Validar que palabras del usuario estén en la lista correcta, sin palabras que no correspondan</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const mamaOk = mamaUser.every(p =&gt; mamaCorrectas.includes(p)) &amp;&amp; mamaUser.length &gt; 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const wawaOk = wawaUser.every(p =&gt; wawaCorrectas.includes(p)) &amp;&amp; wawaUser.length &gt; 0;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>let retro = document.getElementById('retro-juego1');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if(mamaOk &amp;&amp; wawaOk){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>retro.style.color = '#2e7d32';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>retro.textContent = "¡Excelente! Has clasificado correctamente las palabras del Mama Danza y Wawa Danza.";</p>
+<p class="p1"><span class="Apple-converted-space">    </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>retro.style.color = '#c62828';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>retro.textContent = "Revisa las palabras y vuelve a intentarlo. ¡Cada error es una oportunidad para aprender!";</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// Juego 1: Resetear</p>
+<p class="p1"><span class="Apple-converted-space">  </span>function resetJuego1() {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Limpiar dropzones</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const mamaZone = document.querySelectorAll('#juego1 .dropzone')[0];</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const wawaZone = document.querySelectorAll('#juego1 .dropzone')[1];</p>
+<p class="p1"><span class="Apple-converted-space">    </span>mamaZone.innerHTML = '';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>wawaZone.innerHTML = '';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Restaurar palabras al grupo</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const grupo = document.getElementById('grupo-palabras');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>grupo.innerHTML = juego1Palabras.join('');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('retro-juego1').textContent = '';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// Juego 2: Verificar</p>
+<p class="p1"><span class="Apple-converted-space">  </span>function verificarJuego2() {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const zonas = document.querySelectorAll('#juego2 .dropzone');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const respuestas = {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>1: "Inti",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>2: "Atuendo",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>3: "Alfanje",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>4: "Tauna"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>};</p>
+<p class="p1"><span class="Apple-converted-space">    </span>let ok = true;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>for(let i=0; i&lt;zonas.length; i++){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const val = zonas[i].textContent.trim();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if(val !== respuestas[i+1]){</p>
+<p class="p1"><span class="Apple-converted-space">        </span>ok = false;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>break;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const retro = document.getElementById('retro-juego2');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if(ok){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>retro.style.color = '#2e7d32';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>retro.textContent = "¡Muy bien! Cada palabra honra nuestras raíces y cultura andina.";</p>
+<p class="p1"><span class="Apple-converted-space">    </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>retro.style.color = '#c62828';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>retro.textContent = "Revisa tus respuestas y vuelve a intentarlo. ¡Aprender es un camino!";</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// Juego 2: Resetear</p>
+<p class="p1"><span class="Apple-converted-space">  </span>function resetJuego2() {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const zonas = document.querySelectorAll('#juego2 .dropzone');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>zonas.forEach(z =&gt; z.innerHTML = '');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const grupo = document.getElementById('palabras-juego2');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>grupo.innerHTML = juego2Palabras.join('');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('retro-juego2').textContent = '';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p2"><span class="Apple-converted-space"> </span></p>
+</body>
+</html>
